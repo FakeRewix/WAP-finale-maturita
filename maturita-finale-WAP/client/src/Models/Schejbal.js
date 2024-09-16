@@ -10,7 +10,6 @@ export const getAllSchejbals = async () => {
     return {
       status: req.status,
       msg: data.msg,
-      payload: data.payload,
     };
   };
   
@@ -37,7 +36,6 @@ export const getAllSchejbals = async () => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      method: "POST",
       body: JSON.stringify(formData),
     });
     const data = await req.json();
@@ -54,8 +52,6 @@ export const getAllSchejbals = async () => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      method: "PUT",
-      body: JSON.stringify(formData),
     });
     const data = await req.json();
     return {
@@ -68,7 +64,7 @@ export const getAllSchejbals = async () => {
   export const deleteSchejbal = async (id) => {
     const req = await fetch(`http://localhost:3000/schejbals/${id}`, {
       headers: {
-        Accept: "application/json",
+        Accept: "appllcation/json",
         "Content-Type": "application/json",
       },
       method: "DELETE",
